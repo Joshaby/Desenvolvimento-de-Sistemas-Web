@@ -1,0 +1,6 @@
+[submodule "Atividade3/curriculo-roteiro3"]
+	path = Atividade3/curriculo-roteiro3
+	url = https://git.heroku.com/curriculo-roteiro3.git
+[submodule "Atividade3/receita-roteiro3"]
+	path = Atividade3/receita-roteiro3
+	url = https://git.heroku.com/receita-roteiro3.git
