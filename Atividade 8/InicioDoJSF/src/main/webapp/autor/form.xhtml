@@ -7,12 +7,15 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 <h:body>
     <h1>Novo Autor</h1>
-    <fieldset>
-        <legend>Dados do Autor</legend>
-        <h:panelGrid columns="2">
-            <h:outputLabel value="Nome" for="nome" />
-            <h:inputText id="nome" value="#{}"
-        </h:panelGrid>
-    </fieldset>
+    <h:form>
+        <fieldset>
+            <legend>Dados do Autor</legend>
+            <h:panelGrid columns="2">
+                <h:outputLabel value="Nome" for="nome" />
+                <h:inputText id="nome" value="#{autorBean.autor.nome}" />
+                <h:commandButton value="Gravar" action="#{autorBean.gravar}" />
+            </h:panelGrid>
+        </fieldset>
+    </h:form>
 </h:body>
 </html>

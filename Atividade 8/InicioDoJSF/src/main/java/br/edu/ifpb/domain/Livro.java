@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
-@Entity
+@Entity(name = "LIVRO")
 public class Livro {
 
     @Id
@@ -54,5 +54,11 @@ public class Livro {
     }
     public void setDataLancamento(String dataLancamento) {
         this.dataLancamento = dataLancamento;
+    }
+    public List<Autor> getAutores() {
+        return autores;
+    }
+    public void setAutores(List<Autor> autores) {
+        this.autores = autores;
     }
 }

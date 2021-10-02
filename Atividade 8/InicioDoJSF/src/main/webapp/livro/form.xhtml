@@ -10,7 +10,7 @@
 <h:body>
     <h1>Novo Livro</h1>
     <h:form>
-        <fieldset class="container">
+        <fieldset>
             <legend>Dados do livro</legend>
             <h:panelGrid columns="2">
                 <h:outputLabel value="Título" for="titulo" />
@@ -21,7 +21,25 @@
                 <h:inputText id="preco" value="#{livroBean.livro.preco}"/>
                 <h:outputLabel value="Data de Lançamento" for="dataLancamento" />
                 <h:inputText id="dataLancamento" value="#{livroBean.livro.dataLancamento}"/>
-                <h:commandButton value="Gravar" action="#{livroBean.gravar}"/>
+                <h:commandButton value="Gravar Livro" action="#{livroBean.gravar}"/>
+            </h:panelGrid>
+        </fieldset>
+        <fieldset>
+            <legend>Autor(es) do livro</legend>
+            <h:dataTable value="#{livroBean.autoresDoLivro}" var="autor">
+                <h:column>
+                    <h:outputText value="#{autor.nome}" />
+                </h:column>
+            </h:dataTable>
+        </fieldset>
+        <fieldset>
+            <legend>Dados do Autor</legend>
+            <h:panelGrid columns="2">
+                <h:outputLabel value="Nome" for="autor" />
+                <h:selectOneMenu id="autor" value="#{livroBean.autorId}">
+                    <f:selectItems value="#{livroBean.autores}" var="autor" itemLabel="#{autor.nome}" itemValue="#{autor.id}"/>
+                </h:selectOneMenu>
+                <h:commandButton value="Gravar Autor" action="#{livroBean.gravarAutor}" />
             </h:panelGrid>
         </fieldset>
     </h:form>
